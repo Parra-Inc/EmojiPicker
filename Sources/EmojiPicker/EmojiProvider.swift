@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Smile
 
 public protocol EmojiProvider {
     func getAll() -> [Emoji]

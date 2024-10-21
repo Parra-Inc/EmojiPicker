@@ -7,16 +7,13 @@
 
 import Foundation
 import EmojiPicker
+import Smile
 
 final class LimitedEmojiProvider: EmojiProvider {
 
     func getAll() -> [Emoji] {
         return [
-            Emoji(value: "🚀", name: "rocket"),
-            Emoji(value: "🇫🇷", name: "France"),
-            Emoji(value: "🦄", name: "unicorn"),
-            Emoji(value: "🍺", name: "beer"),
-            Emoji(value: "💶", name: "euro")
+            Emoji(value: "🚀", description: "Rocket"),
         ]
     }
 

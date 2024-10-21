@@ -7,6 +7,7 @@
 
 import SwiftUI
 import EmojiPicker
+import Smile
 
 struct ContentView: View {
 
@@ -24,7 +25,7 @@ struct ContentView: View {
             VStack {
                 Text(selectedEmoji?.value ?? "")
                     .font(.largeTitle)
-                Text(selectedEmoji?.name ?? "")
+                Text(selectedEmoji?.description ?? "")
                     .font(.title3)
             }
             .padding(8)

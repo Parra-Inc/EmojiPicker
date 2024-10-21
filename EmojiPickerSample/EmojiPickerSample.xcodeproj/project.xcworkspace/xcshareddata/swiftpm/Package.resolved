@@ -3,10 +3,10 @@
     {
       "identity" : "smile",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/onmyway133/Smile",
+      "location" : "https://github.com/ianmaccallum/Smile",
       "state" : {
-        "revision" : "40604722a7a56f735124e069fcbb58307637744b",
-        "version" : "2.1.0"
+        "branch" : "master",
+        "revision" : "b39e1d27c8b6165c5a18d9d97a786efc5ad9bde9"
       }
     }
   ],
