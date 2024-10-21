@@ -101,6 +101,24 @@ When a user selects an emoji, it is highlighted. By default the selection color 
 EmojiPickerView(selectedEmoji: $selectedEmoji, selectedColor: .orange)
 ```
 
+### Emoji background color
+
+The background color of the emoji when it is not selected. By default the background color is `.gray.opacity(0.4)` but you can change this value when creating the view: 
+
+
+```swift
+EmojiPickerView(selectedEmoji: $selectedEmoji, emojiBackgroundColor: .gray.opacity(0.1))
+```
+
+### Emoji corner radius
+
+The corner radius of the emoji. By default the background color is `16` but you can change this value when creating the view: 
+
+
+```swift
+EmojiPickerView(selectedEmoji: $selectedEmoji, cornerRadius: 10)
+```
+
 ### Enable search
 
 By default the search for emoji is allowed in the picker, it is however possible to change this setting when creating the view:

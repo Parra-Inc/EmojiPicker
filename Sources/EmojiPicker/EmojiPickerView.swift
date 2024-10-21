@@ -19,11 +19,21 @@ public struct EmojiPickerView: View {
     private var search: String = ""
 
     private var selectedColor: Color
+    private var emojiBackgroundColor: Color
+    private var emojiCornerRadius: CGFloat
     private var searchEnabled: Bool
 
-    public init(selectedEmoji: Binding<Emoji?>, searchEnabled: Bool = false, selectedColor: Color = .blue, emojiProvider: EmojiProvider = DefaultEmojiProvider()) {
+    public init(
+        selectedEmoji: Binding<Emoji?>,
+        searchEnabled: Bool = false,
+        selectedColor: Color = .blue,
+        emojiBackgroundColor: Color = .gray.opacity(0.4),
+        emojiCornerRadius: CGFloat = 16,
+        emojiProvider: EmojiProvider = DefaultEmojiProvider()) {
         self._selectedEmoji = selectedEmoji
         self.selectedColor = selectedColor
+        self.emojiBackgroundColor = emojiBackgroundColor
+        self.emojiCornerRadius = emojiCornerRadius
         self.searchEnabled = searchEnabled
         self.emojis = emojiProvider.getAll()
     }
@@ -47,8 +57,8 @@ public struct EmojiPickerView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(searchResults, id: \.self) { emoji in
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill((selectedEmoji == emoji ? selectedColor : Color.gray).opacity(0.4))
+                    RoundedRectangle(cornerRadius: emojiCornerRadius)
+                        .fill(selectedEmoji == emoji ? selectedColor : emojiBackgroundColor)
                         .frame(width: 64, height: 64)
                         .overlay {
                             Text(emoji.value)
